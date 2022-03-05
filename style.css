@@ -297,3 +297,8 @@ body {
     letter-spacing: 2.95937px;
   }
 }
+@media screen and (max-width: 400px) {
+  .value {
+    font-size: 0.4rem;
+  }
+}
