@@ -272,7 +272,7 @@ body {
 
 @media screen and (max-width: 600px) {
   body {
-    background-position: bottom right -100px, top right, top right;
+    background-position: bottom 0 right -100px, top right, top right;
   }
 
   .container h1 {
@@ -282,12 +282,12 @@ body {
   }
   .countdown-wrap {
     justify-content: space-between;
-    column-gap: unset;
+    column-gap: 16px;
     max-width: 350px;
     margin: 0 auto;
   }
   .value {
-    font-size: 0.5rem;
+    font-size: 0.45rem;
   }
   .countdown .description {
     font-size: 7px;
