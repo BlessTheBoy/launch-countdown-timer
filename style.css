@@ -282,9 +282,12 @@ body {
   }
   .countdown-wrap {
     justify-content: space-between;
-    column-gap: 16px;
+    column-gap: unset;
     max-width: 350px;
     margin: 0 auto;
+  }
+  .countdown-wrap .countdown {
+    margin: 0 8px;
   }
   .value {
     font-size: 0.45rem;
