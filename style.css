@@ -15,29 +15,31 @@ ul {
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
   background: url(images/pattern-hills.svg), url(images/bg-stars.svg),
     linear-gradient(180deg, #1d1e28 0.12%, #261c2d 94.84%, #261a2d 100%);
-  background-position: bottom 0 right -64px, top right, top right;
-  background-size: 909px auto, 100% calc(100% - 168px), 100% 100%;
+  background-position: bottom left, top right, top right;
+  /* background-size: 1538px auto, 100% calc(100% - 168px), 100% 100%; */
   background-repeat: no-repeat;
   padding: 0 24px;
 }
 
 .container {
-  margin: 20vh auto;
+  padding-top: 20vh;
+  margin: 0 auto;
   text-align: center;
 }
 
 .container h1 {
   font-weight: bold;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 29px;
   text-align: center;
-  letter-spacing: 6.13636px;
+  letter-spacing: 7.5px;
   text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: 54px;
+  margin-bottom: 104px;
 }
 
 .countdown-wrap {
@@ -50,10 +52,10 @@ body {
 
 .countdown .description {
   font-weight: bold;
-  font-size: 7px;
-  line-height: 9px;
+  font-size: 14px;
+  line-height: 19px;
   text-align: center;
-  letter-spacing: 2.95937px;
+  letter-spacing: 5.91875px;
   color: #8385a9;
   text-transform: uppercase;
 }
@@ -74,17 +76,28 @@ body {
 }
 
 .value {
-  width: 148px;
-  height: 140px;
-  border-radius: 4px;
-  background: #ffffff;
-  margin-bottom: 9px;
-  box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.75);
+  perspective: 25em;
+  width: 9.25em;
+  height: 8.75em;
+  border-radius: 0.5em;
+  margin-bottom: 1.625em;
+  box-shadow: 0px 0.625em 0px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0.625em 0px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0.625em 0px 0px rgba(0, 0, 0, 0.75);
   background-color: #343650;
   color: white;
   position: relative;
+  font-size: 1rem;
+}
+
+.helper-value {
+  position: absolute;
+  perspective: 25em;
+  top: 0;
+  left: 0;
+  width: 9.25em;
+  height: 8.75em;
+  border-radius: 0.5em;
 }
 
 .value-help {
@@ -117,8 +130,8 @@ body {
   top: 50%;
   left: 0;
   transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
+  width: 0.75em;
+  height: 0.75em;
   border-radius: 50%;
   background: #191a23;
 }
@@ -129,8 +142,8 @@ body {
   top: 50%;
   right: 0;
   transform: translate(50%, -50%);
-  width: 12px;
-  height: 12px;
+  width: 0.75em;
+  height: 0.75em;
   border-radius: 50%;
   background: #191a23;
 }
@@ -139,15 +152,41 @@ body {
 .down {
   width: 100%;
   height: 50%;
-  overflow: hidden;
-  font-weight: bold;
-  font-size: 80px;
-  line-height: 71px;
   text-align: center;
-  letter-spacing: -2.4px;
   color: #fb5e84;
   overflow: hidden;
   position: relative;
+  background-color: #343650;
+}
+
+.up span,
+.down span {
+  font-weight: bold;
+  font-size: 5em;
+  line-height: 0.8875;
+  letter-spacing: -2.4px;
+}
+
+.up {
+  -webkit-transform-origin: center bottom;
+  -ms-transform-origin: center bottom;
+  transform-origin: center bottom;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.down {
+  border-radius: 0 0 0.5em 0.5em;
+  -webkit-transform-origin: center top;
+  -ms-transform-origin: center top;
+  transform-origin: center top;
+}
+
+.helper-down {
+  -webkit-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+
+  /* box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.75); */
 }
 
 .up span {
@@ -166,3 +205,42 @@ body {
   transform: translate(-50%, -50%);
   /* margin-top: 50%; */
 }
+
+/* Animations */
+@-webkit-keyframes upflip {
+  from {
+    -webkit-transform: rotateX(0deg);
+  }
+  to {
+    -webkit-transform: rotateX(-90deg);
+  }
+}
+
+@keyframes upflip {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    transform: rotateX(-90deg);
+  }
+}
+
+@-webkit-keyframes downflip {
+  0% {
+    -webkit-transform: rotateX(90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+  }
+}
+
+@keyframes downflip {
+  0% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+/* Helper cards styling */
