@@ -302,3 +302,8 @@ body {
     font-size: 0.4rem;
   }
 }
+@media screen and (max-width: 300px) {
+  .value {
+    font-size: 0.35rem;
+  }
+}
