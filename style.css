@@ -34,7 +34,7 @@ body {
 .container h1 {
   font-weight: bold;
   font-size: 22px;
-  line-height: 29px;
+  line-height: 1.318;
   text-align: center;
   letter-spacing: 7.5px;
   text-transform: uppercase;
@@ -53,7 +53,7 @@ body {
 .countdown .description {
   font-weight: bold;
   font-size: 14px;
-  line-height: 19px;
+  line-height: 1.357;
   text-align: center;
   letter-spacing: 5.91875px;
   color: #8385a9;
@@ -244,3 +244,53 @@ body {
 }
 
 /* Helper cards styling */
+
+@media screen and (max-width: 800px) {
+  body {
+    background-position: bottom right -129px, top right, top right;
+    background-size: 971px auto, auto calc(100% - 168px), 100% 100%;
+    background-repeat: no-repeat;
+    padding: 0 24px;
+  }
+
+  .container h1 {
+    font-size: 20px;
+    /* letter-spacing: 7.5px; */
+    margin-bottom: 79px;
+  }
+  .countdown-wrap {
+    column-gap: 1rem;
+  }
+  .value {
+    font-size: 0.8rem;
+  }
+  .countdown .description {
+    font-size: 10px;
+    letter-spacing: 5.91875px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-position: bottom right -100px, top right, top right;
+  }
+
+  .container h1 {
+    font-size: 18px;
+    letter-spacing: 6.13636px;
+    margin-bottom: 54px;
+  }
+  .countdown-wrap {
+    justify-content: space-between;
+    column-gap: unset;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .value {
+    font-size: 0.5rem;
+  }
+  .countdown .description {
+    font-size: 7px;
+    letter-spacing: 2.95937px;
+  }
+}
