@@ -8,7 +8,7 @@ const hoursWrap = document.getElementById("hours");
 const daysWrap = document.getElementById("days");
 
 const getCountdown = () => {
-  let finalDate = new Date("Thu Mar 17 2022 19:27:37 GMT+0100").getTime();
+  let finalDate = new Date("Mon Dec 05 2022 09:00:00 GMT+0100").getTime();
   let currentDate = new Date().getTime();
 
   let timeDifference = finalDate - currentDate;
